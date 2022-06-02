@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- === Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wizard Lights</title>
+
+    <!-- ===== CSS ===== -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- ===== Boxicons CSS ===== -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!--<title>Responsive Navigation Menu Bar</title>-->
+  </head>
+  <body>
+    <nav>
+      <div class="nav-bar">
+        <i class="bx bx-menu sidebarOpen"></i>
+        <span class="logo navLogo"
+          ><a href="#"><strong>Wizard Lighs</strong></a></span
+        >
+
+        <div class="menu">
+          <div class="logo-toggle">
+            <span class="logo"
+              ><a href="#"><strong>Wizard Lights</strong></a></span
+            >
+            <i class="bx bx-x siderbarClose"></i>
+          </div>
+
+          <ul class="nav-links">
+            <li><a href="/Users/ahmed/Desktop/Website/index.html">Home</a></li>
+            <li><a href="/Users/ahmed/Desktop/Website/About2/about.html">About</a></li>
+            <li><a href="/Users/ahmed/Desktop/Website/Projects/projects.html">Projects</a></li>
+            <li><a href="/Users/ahmed/Desktop/Website/Contact/contact.html">Contact</a></li>
+            <li><a href="#">Social</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="text">We Are Wizard Lights.</div>
+    <a href="/Users/ahmed/Desktop/Website/About2/about.html" class="button">Learn More</a>
+
+    <script>
+      const body = document.querySelector("body"),
+        nav = document.querySelector("nav"),
+        modeToggle = document.querySelector(".dark-light"),
+        searchToggle = document.querySelector(".searchToggle"),
+        sidebarOpen = document.querySelector(".sidebarOpen"),
+        siderbarClose = document.querySelector(".siderbarClose");
+
+      let getMode = localStorage.getItem("mode");
+      if (getMode && getMode === "dark-mode") {
+        body.classList.add("dark");
+      }
+
+      sidebarOpen.addEventListener("click", () => {
+        nav.classList.add("active");
+      });
+
+      body.addEventListener("click", (e) => {
+        let clickedElm = e.target;
+
+        if (
+          !clickedElm.classList.contains("sidebarOpen") &&
+          !clickedElm.classList.contains("menu")
+        ) {
+          nav.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>
